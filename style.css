@@ -1,0 +1,304 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Source+Code+Pro:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Pacifico&family=Source+Code+Pro:wght@500&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Pacifico', cursive;
+}
+.main_container{
+    position: relative;
+    height: 80vh;
+    background: #f1f1f1;
+}
+.main_container .toggle_icon{
+    position: absolute;
+    top: 2rem;
+    right:2rem;
+    font-size: 3rem;
+    color: red;
+}
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+header{
+    display: flex;
+}
+.sidebar{
+    background: #eee6e6;
+    width: 20vw;
+    padding: 10rem 5rem;
+    height: 80vh;
+    /* position: fixed; */
+}
+#check, .toggle_icon{
+    display: block;
+}
+.sidebar ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+}
+.sidebar ul li{
+    font-size: 1.5rem;
+    /* font-family: 'Source Code Pro', monospace; */
+}
+.sidebar ul li a{
+    text-decoration: none;
+    color: #222;
+}
+.content_container{
+    /* background: li ghtseagreen; */
+    width: 100vw;
+    height: 100vh;
+}
+.content_container .info_container{
+    /* background: blueviolet; */
+    width: 70vw;
+    height: 60vh;
+    display: flex;
+    justify-content: space-around;
+    margin: 6rem auto;
+    font-family: 'Bebas Neue', cursive;
+}
+.info_container .dev_info{
+    display: flex;
+    justify-content:center;
+    flex-direction: column;
+}
+.info_container .hello{
+    font-size: 7rem;
+}
+.name{
+    font-size: 4rem;
+}
+.about{
+    font-size: 2rem;
+}
+.moreabout{
+    font-size: 1.2rem;
+}
+.info_container .btns{
+    margin-top: 1.2rem;
+    display: flex;
+    gap: 1rem;
+}
+.info_container .btns a{
+    text-decoration: none;
+    background: rgb(61, 58, 58);
+    padding: .6rem 2rem;
+    border-radius: .5rem;
+    color: #fff;
+    transition: .5s;
+}
+.info_container .btns .active{
+    background: #fff;
+    color: #000;
+    border: 1px solid gray;
+}
+.info_container .btns .active:hover{
+    background: rgb(61, 58, 58);
+    color: #fff;
+}
+.info_container .dev_pic{
+   height: 60vh;
+}
+.info_container .dev_pic figure img{
+    width: 25rem;
+    height: 25rem;
+    border-radius: 50%;
+    transition: .5s;
+    animation: updown 2s alternate-reverse infinite;
+}
+@keyframes updown{
+    100%{
+        transform: translateY(5rem);
+    }
+}
+
+/* responsive code  */
+
+@media(max-width:768px){
+    .main_container .toggle_icon{
+        display: block;
+        position: absolute;
+        right: 2rem;
+        font-size: 3rem;
+        top: 1rem;
+        display: grid;
+        place-items: center;
+        font-weight: bold;
+        color:blueviolet;
+    }
+    .content_container{
+        width:80vw;
+    }
+   
+    .sidebar{
+      padding: 1rem ;
+      /* position: unset; */
+      background: transparent;
+    }
+    .main_container{
+        height: 85vh;
+    }
+     .dev_info .hello{
+        margin-top: 4.3rem;
+        font-size: 4.6rem;
+    }
+    .dev_info .name{
+        font-size: 3.2rem;
+    }
+    .dev_info .about{
+        font-size: 1.6rem;
+    }
+    .sidebar ul li a{
+        font-size: 1.4rem;
+        color: blueviolet;
+    }
+    .info_container{
+        display: flex;
+        justify-content: center;
+        gap: 1;
+        flex-direction: column;
+    }
+  
+     .dev_pic figure img{
+        width: 25rem;
+        height: 25rem;
+        border-radius: 50%;
+        /* box-shadow: 0 2px 305px black; */
+        margin-top: 1rem;
+    }
+}
+
+
+/* gallery code  */
+.gallery_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    flex-direction: column;
+    gap: 2rem;
+}
+.gallery{
+    width: 80vw;
+    display: grid;
+    background: #f1f1f1;
+    grid-template-columns: 1fr 1fr 1fr;
+    place-items: center;
+    padding: 4rem;
+    grid-gap:3rem
+}
+.gallery .img_box img{
+    width: 100%;
+    transition: .5s;
+    height: 100%;
+}
+.gallery_container h1{
+    font-size: 5rem;
+    color: blueviolet;
+    position: relative;
+}
+.gallery_container h1::after{
+    content: '';
+    height: .2rem;
+    left: 0;
+    bottom: -.5rem;
+    width: 100%;
+    background: #000;
+    position: absolute;
+}
+.gallery .img_box img:hover{
+    transform: scale(1.1);
+}
+
+@media(max-width:768px)
+{
+.gallery{
+    display: flex;
+    width: 100vw;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    gap: 6rem;
+}
+}
+/* contact us page design */
+
+.form_container{
+    width: 100vw;
+    height: 72vh;
+    /* background: #8a2be2; */
+    padding: 2rem 4rem ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.form_container .form_heading{
+    font-size: 4rem;
+}
+hr{
+    display: none;
+}
+.form_container  input {
+    width: 90vw;
+    padding: .3rem 2rem;
+    font-size: 2rem;
+    outline: none;
+    border: 1px solid lightgray;
+    border-radius: .5rem;
+    margin-top: .5rem;
+   
+}
+.form_container input[type="submit"]{
+    background: rgb(61, 58, 58);
+    border: 1px inset gray;
+    color: #fff;
+    cursor: pointer;
+}
+@media(max-width:768px){
+    .form_container{
+        width: 100vw;
+        height: 60vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin: 0;
+    }
+    .form_container .form_heading{
+        font-size: 2.4rem;
+        text-align: center;
+        /* font-family: 'Source Code Pro', monospace; */
+        margin-top: 8rem;
+        color: red;
+    }
+}
+
+footer{
+    width: 100vw;
+    display: grid;
+    place-items: center;
+    margin: -2rem 0rem 3rem 0rem ;
+}
+footer p{
+    margin: 0;
+    font-size: 2rem;
+}
+
+@media(max-width:768px){
+    footer{
+        margin: 4rem 0;
+    }
+    
+}
