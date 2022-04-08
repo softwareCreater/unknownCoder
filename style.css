@@ -142,8 +142,6 @@ header{
    
     .sidebar{
       padding: 1rem ;
-      /* position: unset; */
-      background: transparent;
     }
     .main_container{
         height: 85vh;
